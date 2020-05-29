@@ -1,0 +1,32 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+
+public class FravegaTest {
+
+	private WebDriver driver;
+	FravegaTask fravegaTask;
+	@Before
+	public void setUp() throws Exception {
+		fravegaTask = new  FravegaTask(driver);
+		driver = fravegaTask.chromeDriverConnection();
+		fravegaTask.visit("https://www.fravega.com/");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() throws InterruptedException {
+		
+		fravegaTask.BuscarHeladera();
+		//assertEquals("No aparece Heladera con frizzer",);
+	}
+}
